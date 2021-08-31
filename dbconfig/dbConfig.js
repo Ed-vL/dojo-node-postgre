@@ -27,14 +27,14 @@ while (tries > 0) {
                                     alunoId SERIAL NOT NULL,
                                     name VARCHAR(60) NOT NULL,
                                     
-                                    CONSTRAINT ALUNO_PK PRIMARY KEY (alunoId),
+                                    CONSTRAINT ALUNO_PK PRIMARY KEY (alunoId)
                                 );
                                 CREATE TABLE GRUPO (
                                     grupoId SERIAL NOT NULL,
                                     tema VARCHAR(60) NOT NULL,
                                     nota INT NOT NULL,
                                     
-                                    CONSTRAINT GRUPO_PK PRIMARY KEY (grupoId),
+                                    CONSTRAINT GRUPO_PK PRIMARY KEY (grupoId)
                                 );
                                 CREATE TABLE integra (
                                     alunoId SERIAL NOT NULL,
@@ -43,8 +43,7 @@ while (tries > 0) {
                                     CONSTRAINT integra_GRUPO_FK FOREIGN KEY (grupoId)
                                         REFERENCES GRUPO (grupoId)  ON DELETE CASCADE ON UPDATE CASCADE,
                                     CONSTRAINT integra_ALUNO_FK FOREIGN KEY (alunoId)
-                                        REFERENCES ALUNO (alunoId)  ON DELETE CASCADE ON UPDATE CASCADE,
-
+                                        REFERENCES ALUNO (alunoId)  ON DELETE CASCADE ON UPDATE CASCADE
                                 );`, (err, res) => {
                         if (err) {
                             console.log("Failed creating Database");

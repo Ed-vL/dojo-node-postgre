@@ -11,6 +11,6 @@ RUN npm i nodemon -g
 
 COPY ./ /app
 
-ENTRYPOINT ["./wait-for-it.sh", "db:5432", "--", "npm","run","start-dev"]
+ENTRYPOINT ["npm","run","start-dev"]
 
 EXPOSE 3000

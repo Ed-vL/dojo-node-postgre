@@ -54,7 +54,7 @@ while (tries > 0) {
                     });
                 }
 
-                else if (res.rowCount != 10)
+                else if (res.rowCount != 4)
                     throw '\x1b[33mFaulty database in project\n\x1b[33mDelete dbdata and start project again';
 
                 else
